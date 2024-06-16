@@ -138,6 +138,10 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
                 binding.statusTitle.setText(R.string.partial_activated);
                 binding.statusIcon.setImageResource(R.drawable.ic_round_warning_24);
                 binding.warningCard.setVisibility(View.VISIBLE);
+                if (unsupportedLSPosed) {
+                    binding.warningTitle.setText(R.string.unofficial_notice_title);
+                    binding.warningSummary.setText(HtmlCompat.fromHtml(getString(R.string.unofficial_notice_summary), HtmlCompat.FROM_HTML_MODE_LEGACY));
+                }
                 if (sepolicyAbnormal) {
                     binding.warningTitle.setText(R.string.selinux_policy_not_loaded_summary);
                     binding.warningSummary.setText(HtmlCompat.fromHtml(getString(R.string.selinux_policy_not_loaded), HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -149,10 +153,6 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
                 if (dex2oatAbnormal) {
                     binding.warningTitle.setText(R.string.system_prop_incorrect_summary);
                     binding.warningSummary.setText(HtmlCompat.fromHtml(getString(R.string.system_prop_incorrect), HtmlCompat.FROM_HTML_MODE_LEGACY));
-                }
-                if (unsupportedLSPosed) {
-                    binding.warningTitle.setText(R.string.unofficial_notice_title);
-                    binding.warningSummary.setText(HtmlCompat.fromHtml(getString(R.string.unofficial_notice_summary), HtmlCompat.FROM_HTML_MODE_LEGACY));
                 }
             } else {
                 binding.warningCard.setVisibility(View.GONE);
