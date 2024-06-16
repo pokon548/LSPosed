@@ -130,7 +130,11 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
             boolean dex2oatAbnormal = ConfigManager.getDex2OatWrapperCompatibility() != ILSPManagerService.DEX2OAT_OK && !ConfigManager.dex2oatFlagsLoaded();
             var sepolicyAbnormal = !ConfigManager.isSepolicyLoaded();
             var systemServerAbnormal = !ConfigManager.systemServerRequested();
-            if (sepolicyAbnormal || systemServerAbnormal || dex2oatAbnormal) {
+
+            // Unsupported notification
+            boolean unsupportedLSPosed = true;
+
+            if (sepolicyAbnormal || systemServerAbnormal || dex2oatAbnormal || unsupportedLSPosed) {
                 binding.statusTitle.setText(R.string.partial_activated);
                 binding.statusIcon.setImageResource(R.drawable.ic_round_warning_24);
                 binding.warningCard.setVisibility(View.VISIBLE);
@@ -145,6 +149,10 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
                 if (dex2oatAbnormal) {
                     binding.warningTitle.setText(R.string.system_prop_incorrect_summary);
                     binding.warningSummary.setText(HtmlCompat.fromHtml(getString(R.string.system_prop_incorrect), HtmlCompat.FROM_HTML_MODE_LEGACY));
+                }
+                if (unsupportedLSPosed) {
+                    binding.warningTitle.setText(R.string.unofficial_notice_title);
+                    binding.warningSummary.setText(HtmlCompat.fromHtml(getString(R.string.unofficial_notice_summary), HtmlCompat.FROM_HTML_MODE_LEGACY));
                 }
             } else {
                 binding.warningCard.setVisibility(View.GONE);

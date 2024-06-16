@@ -76,6 +76,8 @@
     <string name="update_lsposed">Update LSPosed</string>
     <string name="update_lsposed_msg">Confirm to update LSPosed? This device will reboot after update completion</string>
     <string name="info_copied">Copied to clipboard</string>
+    <string name="unofficial_notice_title">Unofficial LSPosed</string>
+    <string name="unofficial_notice_summary">You are using an unofficial variant of LSPosed. This is unsupported by either me or LSPosed contributors. Do not report issues unless third-party variant is explicitly supported.</string>
 
     <!-- WelcomeDialog -->
     <string name="parasitic_welcome">Welcome to LSPosed</string>

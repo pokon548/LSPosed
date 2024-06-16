@@ -73,6 +73,8 @@
     <string name="update_lsposed">更新 LSPosed</string>
     <string name="update_lsposed_msg">确认更新 LSPosed? 设备将会在完成更新后自动重启。</string>
     <string name="info_copied">已复制到剪贴板</string>
+    <string name="unofficial_notice_title">非官方 LSPosed</string>
+    <string name="unofficial_notice_summary">你正在使用非官方版 LSPosed。这不被我或 LSPosed 官方支持。除非明确提及支持非官方版反馈，否则请勿提交问题报告。</string>
     <!-- WelcomeDialog -->
     <string name="parasitic_welcome">欢迎使用 LSPosed</string>
     <string name="parasitic_welcome_summary">你正在使用寄生管理器，可创建快捷方式或继续从通知中打开。</string>
